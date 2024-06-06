@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuizi i Zemrës</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .question h3 {
+            margin: 0 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h1>Kuizi i Zemrës</h1>
+        <form id="quizForm">
+            <div class="question">
+                <h3>1. Sa dhoma ka zemra?</h3>
+                <input type="radio" name="q1" value="2"> 2<br>
+                <input type="radio" name="q1" value="4"> 4<br>
+                <input type="radio" name="q1" value="6"> 6<br>
+            </div>
+            <div class="question">
+                <h3>2. Cila nga këto njihet si "pacemaker" i zemrës?</h3>
+                <input type="radio" name="q2" value="Nyja atrioventrikulare"> Nyja atrioventrikulare<br>
+                <input type="radio" name="q2" value="Nyja sinoatriale"> Nyja sinoatriale<br>
+                <input type="radio" name="q2" value="Blloku i Hisit"> Blloku i Hisit<br>
+            </div>
+            <div class="question">
+                <h3>3. Cila arterie furnizon me gjak zemrën vetë?</h3>
+                <input type="radio" name="q3" value="Arteria pulmonare"> Arteria pulmonare<br>
+                <input type="radio" name="q3" value="Arteria koronare"> Arteria koronare<br>
+                <input type="radio" name="q3" value="Arteria karotide"> Arteria karotide<br>
+            </div>
+            <div class="question">
+                <h3>4. Cila është arteria më e madhe në trupin e njeriut?</h3>
+                <input type="radio" name="q4" value="Aorta"> Aorta<br>
+                <input type="radio" name="q4" value="Arteria femorale"> Arteria femorale<br>
+                <input type="radio" name="q4" value="Arteria subklaviane"> Arteria subklaviane<br>
+            </div>
+            <div class="question">
+                <h3>5. Cili është funksioni kryesor i valvulave të zemrës?</h3>
+                <input type="radio" name="q5" value="Të ndihmojnë në frymëmarrje"> Të ndihmojnë në frymëmarrje<br>
+                <input type="radio" name="q5" value="Të rregullojnë rrjedhën e gjakut"> Të rregullojnë rrjedhën e gjakut<br>
+                <input type="radio" name="q5" value="Të shpërndajnë lëndë ushqyese"> Të shpërndajnë lëndë ushqyese<br>
+            </div>
+            <div class="question">
+                <h3>6. Sa është frekuenca mesatare e rrahjeve të zemrës në minuta për një të rritur të shëndetshëm?</h3>
+                <input type="radio" name="q6" value="40-60"> 40-60<br>
+                <input type="radio" name="q6" value="60-100"> 60-100<br>
+                <input type="radio" name="q6" value="100-140"> 100-140<br>
+            </div>
+            <div class="question">
+                <h3>7. Cili është emri i qelizave të kuqe të gjakut që transportojnë oksigjen?</h3>
+                <input type="radio" name="q7" value="Leukocitet"> Leukocitet<br>
+                <input type="radio" name="q7" value="Trombocitet"> Trombocitet<br>
+                <input type="radio" name="q7" value="Eritrocitet"> Eritrocitet<br>
+            </div>
+            <div class="question">
+                <h3>8. Cili organ punon së bashku me zemrën për të qarkulluar gjakun?</h3>
+                <input type="radio" name="q8" value="Mushkëritë"> Mushkëritë<br>
+                <input type="radio" name="q8" value="Mëlçia"> Mëlçia<br>
+                <input type="radio" name="q8" value="Veshkat"> Veshkat<br>
+            </div>
+            <button type="button" onclick="checkAnswers()">Dërgo</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkAnswers() {
+            var form = document.getElementById('quizForm');
+            var result = document.getElementById('result');
+            var score = 0;
+
+            if (form.q1.value === '4') {
+                score++;
+            }
+            if (form.q2.value === 'Nyja sinoatriale') {
+                score++;
+            }
+            if (form.q3.value === 'Arteria koronare') {
+                score++;
+            }
+            if (form.q4.value === 'Aorta') {
+                score++;
+            }
+            if (form.q5.value === 'Të rregullojnë rrjedhën e gjakut') {
+                score++;
+            }
+            if (form.q6.value === '60-100') {
+                score++;
+            }
+            if (form.q7.value === 'Eritrocitet') {
+                score++;
+            }
+            if (form.q8.value === 'Mushkëritë') {
+                score++;
+            }
+
+            result.innerHTML = 'Ju keni marrë ' + score + ' nga 8 pikë.';
+        }
+    </script>
+</body>
+</html>
